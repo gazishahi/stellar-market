@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://cudluios:4RWtGMKpPGF0prKRS6WHP7iw8_vQ7LJL@lallah.db.elephantsql.com/cudluios"
+  shadowDatabaseUrl = "postgres://izzwjlkk:T8gQfLwe2mQcLnyFy-ZD5Hb9tStmj6GW@lallah.db.elephantsql.com/izzwjlkk"
+}
+
+//user-model
+model User{
+  id String @id @default(uuid())
+  email String @unique
+  name String?
+  password String 
+  createdAt DateTime @default(now())
+  products Product[] //One-to-many relations
+
+}
+
+//product-model
+model Product{
+  id String @id @default(uuid())
+  title String 
+  description String
+  createdAt DateTime @default(now())
+  publisher User @relation(fields:[publisherId], references: [id]) //pass in userId to publisherId for identification
+  publisherId String
+  
+}
