@@ -6,9 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = "postgres://cudluios:4RWtGMKpPGF0prKRS6WHP7iw8_vQ7LJL@lallah.db.elephantsql.com/cudluios"
-  shadowDatabaseUrl = "postgres://izzwjlkk:T8gQfLwe2mQcLnyFy-ZD5Hb9tStmj6GW@lallah.db.elephantsql.com/izzwjlkk"
+  provider = "cockroachdb"
+  url      = "postgresql://arnan:67dqLIzOIGJKj6yAA7-Q-w@stellar-market-4597.g8z.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
 }
 
 //user-model
