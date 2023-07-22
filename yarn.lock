@@ -124,10 +124,17 @@
   resolved "https://registry.npmjs.org/@next/font/-/font-13.4.9.tgz"
   integrity sha512-aR0XEyd1cxqaKuelQFDGwUBYV0wyZfJTNiRoSk1XsECTyMhiSMmCOY7yOPMuPlw+6cctca0GyZXGGFb5EVhiRw==
 
+<<<<<<< Updated upstream
 "@next/swc-win32-x64-msvc@13.4.9":
   version "13.4.9"
   resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.4.9.tgz"
   integrity sha512-QbT03FXRNdpuL+e9pLnu+XajZdm/TtIXVYY4lA9t+9l0fLZbHXDYEKitAqxrOj37o3Vx5ufxiRAniaIebYDCgw==
+=======
+"@next/swc-win32-x64-msvc@13.4.10":
+  version "13.4.10"
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.4.10.tgz"
+  integrity sha512-g2+tU63yTWmcVQKDGY0MV1PjjqgZtwM4rB1oVVi/v0brdZAcrcTV+04agKzWtvWroyFz6IqtT0MoZJA7PNyLVw==
+>>>>>>> Stashed changes
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
