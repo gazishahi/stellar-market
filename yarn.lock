@@ -124,17 +124,10 @@
   resolved "https://registry.npmjs.org/@next/font/-/font-13.4.9.tgz"
   integrity sha512-aR0XEyd1cxqaKuelQFDGwUBYV0wyZfJTNiRoSk1XsECTyMhiSMmCOY7yOPMuPlw+6cctca0GyZXGGFb5EVhiRw==
 
-<<<<<<< Updated upstream
 "@next/swc-win32-x64-msvc@13.4.9":
   version "13.4.9"
   resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.4.9.tgz"
   integrity sha512-QbT03FXRNdpuL+e9pLnu+XajZdm/TtIXVYY4lA9t+9l0fLZbHXDYEKitAqxrOj37o3Vx5ufxiRAniaIebYDCgw==
-=======
-"@next/swc-win32-x64-msvc@13.4.10":
-  version "13.4.10"
-  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-13.4.10.tgz"
-  integrity sha512-g2+tU63yTWmcVQKDGY0MV1PjjqgZtwM4rB1oVVi/v0brdZAcrcTV+04agKzWtvWroyFz6IqtT0MoZJA7PNyLVw==
->>>>>>> Stashed changes
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -168,6 +161,18 @@
     open "^9.1.0"
     picocolors "^1.0.0"
     tslib "^2.6.0"
+
+"@prisma/client@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@prisma/client/-/client-5.0.0.tgz"
+  integrity sha512-XlO5ELNAQ7rV4cXIDJUNBEgdLwX3pjtt9Q/RHqDpGf43szpNJx2hJnggfFs7TKNx0cOFsl6KJCSfqr5duEU/bQ==
+  dependencies:
+    "@prisma/engines-version" "4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584"
+
+"@prisma/engines-version@4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584":
+  version "4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584"
+  resolved "https://registry.npmjs.org/@prisma/engines-version/-/engines-version-4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584.tgz"
+  integrity sha512-HHiUF6NixsldsP3JROq07TYBLEjXFKr6PdH8H4gK/XAoTmIplOJBCgrIUMrsRAnEuGyRoRLXKXWUb943+PFoKQ==
 
 "@prisma/engines@5.0.0":
   version "5.0.0"
@@ -1953,7 +1958,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prisma@^5.0.0:
+prisma@*, prisma@^5.0.0:
   version "5.0.0"
   resolved "https://registry.npmjs.org/prisma/-/prisma-5.0.0.tgz"
   integrity sha512-KYWk83Fhi1FH59jSpavAYTt2eoMVW9YKgu8ci0kuUnt6Dup5Qy47pcB4/TLmiPAbhGrxxSz7gsSnJcCmkyPANA==
