@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "cockroachdb"
-  url      = "postgresql://arnan:67dqLIzOIGJKj6yAA7-Q-w@stellar-market-4597.g8z.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
+  url      = env("DATABASE_URL")
 }
 
 //user-model
