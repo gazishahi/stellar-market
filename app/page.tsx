@@ -1,4 +1,4 @@
-import Navbar from "./cart/navbar"
+import Navbar from "./navbar"
 import { prisma } from "@/db"
 
 function getUsers(){
