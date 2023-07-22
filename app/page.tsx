@@ -1,5 +1,5 @@
-import Navbar from "./navbar"
-import { prisma } from "@/db"
+import Navbar from "./components/navbar"
+import { prisma } from "@/prisma/db"
 
 function getUsers(){
   return prisma.user.findMany()
