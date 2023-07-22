@@ -12,6 +12,9 @@ export default async function Home() {
   return (
     <>
     <main>
+      {users.map(user=>(
+        <li>{user.email}</li>
+      ))}
     </main>
     </>
   )
