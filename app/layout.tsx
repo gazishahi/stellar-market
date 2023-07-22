@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Roboto, Poppins } from 'next/font/google'
 import Navbar from './navbar'
-import Subnav from './components/subnav'
+import Subnav from './subnav'
 
 const inter = Inter({ subsets: ['latin'] })
 const roboto = Roboto({
