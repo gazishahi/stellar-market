@@ -1,9 +1,12 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, Roboto, Poppins } from 'next/font/google'
-import Navbar from './navbar'
-import Subnav from './subnav'
-import Footer from './footer'
+
+import Navbar from './components/navbar'
+import Footer from './components/footer'
+import Subnav from './components/subnav'
+import './components/styles/globals.css'
+import Provider from './context/AuthContext'
+
 
 const inter = Inter({ subsets: ['latin'] })
 const roboto = Roboto({
@@ -29,7 +32,9 @@ export default function RootLayout({
     <>
       <Navbar/>
       <Subnav/>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Provider>{children}</Provider>
+      </body>
       <Footer/>
     </>
       
