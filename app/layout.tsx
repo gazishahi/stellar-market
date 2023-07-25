@@ -3,7 +3,7 @@ import { Inter, Roboto, Poppins } from 'next/font/google'
 import Navbar from './components/navbar'
 import Subnav from './components/subnav'
 import './components/styles/globals.css'
-import { UserProvider } from '@auth0/nextjs-auth0/client'
+import Provider from './context/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 const roboto = Roboto({
@@ -27,14 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <UserProvider>
-        <Navbar/>
-      </UserProvider>
+      <Navbar/>
       <Subnav/>
       <body className={poppins.className}>
-        <UserProvider>  
-          {children}
-        </UserProvider>
+          <Provider>{children}</Provider>
       </body>
     </>
       
