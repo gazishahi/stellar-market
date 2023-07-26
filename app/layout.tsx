@@ -5,7 +5,7 @@ import Navbar from './components/navbar'
 import Footer from './components/footer'
 import Subnav from './components/subnav'
 import './components/styles/globals.css'
-import Provider from './context/AuthContext'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -33,7 +33,7 @@ export default function RootLayout({
       <Navbar/>
       <Subnav/>
       <body className={poppins.className}>
-        <Provider>{children}</Provider>
+        <UserProvider>{children}</UserProvider>
       </body>
       <Footer/>
     </>

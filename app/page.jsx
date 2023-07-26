@@ -1,7 +1,4 @@
 import Image from "next/image"
-import { getServerSession } from 'next-auth'
-import { authOptions } from './api/auth/[...nextauth]/route'
-import User from './components/user'
 
 
 export default function Home() {
