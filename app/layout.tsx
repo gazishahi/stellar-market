@@ -29,14 +29,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <Navbar/>
-      <Subnav/>
-      <body className={poppins.className}>
-        <UserProvider>{children}</UserProvider>
-      </body>
-      <Footer/>
-    </>
-      
+    <UserProvider>
+    <html lang="en">
+        <body className={poppins.className}>
+        <Navbar/>
+        <Subnav/>
+        {children}
+        </body>
+        <Footer/>
+    </html>
+    </UserProvider>
   )
 }
