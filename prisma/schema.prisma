@@ -12,10 +12,9 @@ datasource db {
 
 //user-model
 model User{
-  id String @id @default(uuid())
+  id String @id @unique @default(uuid())
   email String @unique
   name String?
-  password String 
   createdAt DateTime @default(now())
   products Product[] //One-to-many relations
 }
@@ -27,5 +26,4 @@ model Product{
   createdAt DateTime @default(now())
   publisher User @relation(fields:[publisherId], references: [id]) //pass in userId to publisherId for identification
   publisherId String
-  
 }
