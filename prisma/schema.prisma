@@ -11,19 +11,22 @@ datasource db {
 }
 
 //user-model
-model User{
+model users{
   id String @id @unique @default(uuid())
   email String @unique
-  name String?
-  createdAt DateTime @default(now())
-  products Product[] //One-to-many relations
+  nickname String?
+  password String
+  email_Verified Boolean @default(false)
+  
 }
+
 //product-model
 model Product{
   id String @id @default(uuid())
   title String 
   description String
   createdAt DateTime @default(now())
-  publisher User @relation(fields:[publisherId], references: [id]) //pass in userId to publisherId for identification
-  publisherId String
+  publisherId String @unique
 }
+
+
