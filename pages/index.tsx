@@ -1,6 +1,9 @@
-import Image from "next/image"
+import Image from 'next/image'
+import { useAuth } from '@/context/AuthContext'
 
 export default function Home() {
+  const {currentUser} = useAuth()
+  
   return (
     <>
     <main>
