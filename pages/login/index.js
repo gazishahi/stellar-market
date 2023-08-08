@@ -1,11 +1,13 @@
 import { useAuth } from '@/context/AuthContext'
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
     const [isLoggingIn, setIsLoggingIn] = useState(true)
+    const router = useRouter()
 
     const {login,signup, currentUser} = useAuth()
     console.log(currentUser)
@@ -22,9 +24,16 @@ const Login = () => {
             catch (err) {
                 setError('Incorrect email or password')
             }
-            return
+            
+            return router.push({
+                pathname:"/"
+            })
         }
+        
         await signup(email,password)
+        router.push({
+            pathname:"/"
+        })
     }
 
     return (
