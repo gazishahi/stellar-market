@@ -1,8 +1,9 @@
 import { Inter, Roboto, Poppins } from 'next/font/google'
 
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Subnav from '../components/Subnav'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
+import Subnav from '../components/subnav'
+import ProductsPage from '../pages/products'
 
 const inter = Inter({ subsets: ['latin'] })
 const roboto = Roboto({
@@ -22,6 +23,7 @@ export default function Layout(props){
             <Navbar/>
             <Subnav/>
             {children}
+            <ProductsPage></ProductsPage>
             <Footer/>
         </div>
         
