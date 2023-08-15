@@ -36,6 +36,13 @@ export default function Home() {
             <div className="absolute left-0 top-0 w-3/4 text-black dark:text-white">
               <h3 className="inline bg-white box-decoration-clone py-3 pl-5 font-semibold leading-loose shadow-[1.25rem_0_0] shadow-white dark:bg-black dark:shadow-black text-3xl rounded-br-3xl">{product.name}</h3>
               <p className="w-fit bg-white px-5 py-3 text-sm font-semibold dark:bg-black dark:text-white rounded-br-3xl">
+              {product.metadata && (
+                <div>
+                  <p>Category: {product.metadata.Category} </p>
+                </div>
+              )}
+              </p>
+              <p className="w-fit bg-white px-5 py-3 text-sm font-semibold dark:bg-black dark:text-white rounded-br-3xl">
               {product.prices.map(price => (
                   <div key={price.id}>
 
