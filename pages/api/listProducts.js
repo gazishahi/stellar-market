@@ -1,5 +1,5 @@
 import {  collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../firebase/firebase";
 
 export default async (req, res) => {
   if (req.method !== 'GET') {

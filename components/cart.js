@@ -9,8 +9,8 @@ const poppins = Poppins({
     subsets: ['latin'],
   })
 
-export default function Modal(props) {
-    const { setOpenModal } = props
+export default function Cart(props) {
+    const { setOpenCart } = props
     const [_document, set_document] = useState(null)
     const { logout } = useAuth()
 
@@ -57,14 +57,13 @@ export default function Modal(props) {
         }}>
         <div className='fixed inset-y-0 right-0 bg-white text-slate-900 text-lg sm:text-xl flex flex-col w-1/3 rounded-s-3xl'>
             <div className='flex items-center justify-between border-b border-solid border-slate-900 p-4'>
-                <h1 className='text-2xl sm:text-5xl select-none'>Menu</h1>
-                <i onClick={() => setOpenModal(false)} className="fa-solid fa-xmark duration-300 hover:rotate-90 text-lg sm:text-3xl cursor-pointer"></i>
+                <h1 className='text-2xl sm:text-5xl select-none'>Cart</h1>
+                <i onClick={() => setOpenCart(false)} className="fa-solid fa-xmark duration-300 hover:rotate-90 text-lg sm:text-3xl cursor-pointer"></i>
             </div>
             <div className='p-4 flex flex-col gap-3'>
                 <h2 onClick={() => {
-                    logout()
-                    setOpenModal(false)
-                }} className='select-none duration-300 hover:pl-2 cursor-pointer'>Logout</h2>
+                    setOpenCart(false)
+                }} className='select-none duration-300 hover:pl-2 cursor-pointer'>Huh</h2>
             </div>
         </div>
         </motion.div>
