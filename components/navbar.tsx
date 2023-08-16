@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import {useState} from 'react';
 import { useAuth } from '../context/AuthContext'
-import Modal from '../components/Modal'
+import Modal from './modal'
 import Cart from '../components/cart'
 import { AnimatePresence } from 'framer-motion';
 

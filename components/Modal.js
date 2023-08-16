@@ -66,6 +66,11 @@ export default function Modal(props) {
                     setOpenModal(false)
                 }} className='select-none duration-300 hover:pl-2 cursor-pointer'>Logout</h2>
             </div>
+            <div className='p-4 flex flex-col gap-3'>
+                <h2 onClick={() => {
+                    setOpenModal(false)
+                }} className='select-none duration-300 hover:pl-2 cursor-pointer'><a href='/productForm'>Add Product</a></h2>
+            </div>
         </div>
         </motion.div>
         </div>,
