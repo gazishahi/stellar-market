@@ -1,5 +1,6 @@
 import { useAuth } from '@/context/AuthContext'
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 function toCurrencySymbol(currency) {
   if (currency = "usd") return "$";
@@ -28,9 +29,11 @@ export default function Home() {
     <>
     <main>
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {products.map(product => (
-        <div key={product.id} className="lg:col-span-2 lg:row-span-1 m-3">
-          <a className="block h-full">
+      {products.map(product => { console.log('Product ID:', product.id);
+      return (
+        
+        <Link key={product.id} href={`/${product.id}`} className="lg:col-span-2 lg:row-span-1 m-3">
+          {/* <a className="block h-full"> */}
             <div className="flex h-full w-full items-center justify-center overflow-hidden bg-sky-400 dark:bg-sky-600 relative rounded-3xl">
             <img src={product.images} alt={product.name} height={500} width={500}  className="relative h-full w-full object-contain transition duration-300 ease-in-out hover:scale-105"/>
             <div className="absolute left-0 top-0 w-3/4 text-black dark:text-white">
@@ -53,9 +56,9 @@ export default function Home() {
               </p>
             </div>
             </div>
-          </a>
-        </div>
-      ))}
+          {/* </a> */}
+        </Link>
+      );})}
       
     </div>
     </main>

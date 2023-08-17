@@ -16,7 +16,7 @@ export default async (req, res) => {
       const metadata = product.metadata || {};
       const priceSnap = await getDocs(collection(doc.ref, "prices"));
       const prices = priceSnap.docs.map(priceDoc => priceDoc.data());
-      products.push({ ...product, prices, metadata });
+      products.push({id: doc.id, ...product, prices, metadata });
     }
     res.status(200).json(products);
   } catch (error) {
