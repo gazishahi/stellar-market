@@ -1,7 +1,6 @@
-// pages/api/getProduct.js
 import { db } from "../../firebase/firebase";
-import { doc, getDoc } from "firebase/firestore";
-
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+console.log("Inside getProduct API route");
 export default async (req, res) => {
     if (req.method !== 'GET') {
         return res.status(405).end();
