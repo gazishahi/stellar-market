@@ -20,6 +20,26 @@ export default function Cart(props) {
         set_document(document)
     }, [])
 
+    async function handleCheckout() {
+        const response = await fetch('/api/stripe/createCheckoutSession', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                products: cart,  // assuming cart is an array of items
+            }),
+        });
+    
+        const { sessionId } = await response.json();
+        const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);  // Make sure you've set up this env variable
+    
+        stripe.redirectToCheckout({
+            sessionId,
+        });
+    }
+    
+
     if (!_document) { return null }
 
     return ReactDom.createPortal(
@@ -83,6 +103,9 @@ export default function Cart(props) {
         ))}
         <div className="border-t border-solid border-slate-900 p-4">
         <strong>Total: </strong>${(computeTotalCost() / 100).toFixed(2)}
+        <button onClick={handleCheckout} className="bg-blue-600 text-white px-4 py-2 mt-4 rounded hover:bg-blue-500">
+    Checkout
+</button>
     </div>
         </div>
 

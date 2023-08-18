@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe('sk_test_51NcmNOJxWeWiC013OmIYClWswlOXeY3q9mPRkZ2Sf49cbvlX0qhy6sOXMlKcqFwFL0T57NXhLQ1Vjf2z9hfPzmGz00ZjOkSy83', {
-  apiVersion: '2020-08-27', // Use the latest Stripe API version
+const stripe = new Stripe(process.env.STRIPE_SECRET, {
+  apiVersion: '2023-08-16', // Use the latest Stripe API version
 });
 
 export default async function createStripeProduct(productData) {

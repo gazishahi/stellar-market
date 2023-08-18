@@ -10,6 +10,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <div id="portal"></div>
+        <script src="https://js.stripe.com/v3/"></script>
       </body>
     </Html>
   )
