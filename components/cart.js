@@ -103,10 +103,12 @@ export default function Cart(props) {
         ))}
         <div className="border-t border-solid border-slate-900 p-4">
         <strong>Total: </strong>${(computeTotalCost() / 100).toFixed(2)}
-        <button onClick={handleCheckout} className="bg-blue-600 text-white px-4 py-2 mt-4 rounded hover:bg-blue-500">
+        
+        </div>
+            <div><button onClick={handleCheckout} className="bg-blue-600 text-white px-4 py-2 mt-4 rounded hover:bg-blue-500">
     Checkout
-</button>
-    </div>
+</button></div>
+
         </div>
 
 
