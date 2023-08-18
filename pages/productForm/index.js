@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 
 const AddProductPage = () => {
   let fail = false;
+  const router = useRouter()
+
   const handleProductSubmit = async (productData) => {
     try {
       const product = await createStripeProduct(productData);
@@ -22,11 +24,13 @@ const AddProductPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <>
+    <div className="flex flex-col items-center justify-center">
         <h1 className="text-black text-3xl font-semibold mb-8">Add a Product</h1>
         {fail && <h3 className="text-red-400 text-3xl mb-8">Unable to Register Product</h3>}
         <ProductForm onSubmit={handleProductSubmit} />
     </div>
+    </>
   );
 };
 
