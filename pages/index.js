@@ -1,5 +1,6 @@
 import { useAuth } from '@/context/AuthContext'
 import { useState, useEffect } from 'react';
+import Image from 'next/image'
 
 function toCurrencySymbol(currency) {
   if (currency = "usd") return "$";
@@ -52,7 +53,6 @@ export default function Home() {
       
     </div>
     </main>
-    
     </>
   )
 }

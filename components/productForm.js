@@ -7,25 +7,21 @@ const ProductForm = ({ onSubmit }) => {
   const [image, setImage] = useState(null);
   
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-  
-    // Convert image to base64
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const base64Image = event.target.result; // The base64-encoded image
-      const productData = {
-        title,
-        description,
-        price,
-        image: base64Image, // Use the base64-encoded image
-      };
-      onSubmit(productData);
+
+    const productData = {
+      title,
+      description,
+      price,
+      image,
     };
-    reader.readAsDataURL(image);
+
+    onSubmit(productData);
   };
 
   return (
+    <>
     <form className="max-w-md mx-auto p-4 shadow-md rounded-md" onSubmit={handleFormSubmit}>
       <div className="mb-4">
         <label htmlFor="title" className="block text-gray-700 font-semibold mb-1">Title</label>
@@ -64,7 +60,7 @@ const ProductForm = ({ onSubmit }) => {
         <input
           id="image"
           type="file"
-          accept="image/*"
+          accept="image/jpeg,image/png" 
           className="w-full border rounded px-3 py-2 focus:outline-none focus:border-blue-500"
           onChange={(e) => setImage(e.target.files[0])}
         />
@@ -76,6 +72,7 @@ const ProductForm = ({ onSubmit }) => {
         Add Product
       </button>
     </form>
+    </>
   );
 };
 
