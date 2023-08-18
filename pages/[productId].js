@@ -1,6 +1,6 @@
-// pages/[productId].js
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { useCart } from '../context/CartContext';
 
 export default function ProductPage() {
     const router = useRouter();
@@ -8,6 +8,7 @@ export default function ProductPage() {
     const [product, setProduct] = useState(null);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isModalOpen, setModalOpen] = useState(false);
+    
     const goToNextImage = () => {
         if (activeImageIndex >= product.images.length - 1) {
             setActiveImageIndex(0);
@@ -23,6 +24,12 @@ export default function ProductPage() {
             setActiveImageIndex(prev => prev - 1);
         }
     };
+
+    const { addToCart } = useCart();
+
+    function handleAddToCart() {
+        addToCart(product);
+    }
     
     // Fetch product data using productId and display it
     useEffect(() => {
@@ -97,7 +104,7 @@ export default function ProductPage() {
 
 
 
-            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 mt-4">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 mt-4" onClick={handleAddToCart}>
                 Add to Cart
             </button>
         </div>

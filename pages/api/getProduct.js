@@ -26,7 +26,7 @@ export default async (req, res) => {
         const priceSnap = await getDocs(collection(productRef, "prices"));
         const prices = priceSnap.docs.map(priceDoc => priceDoc.data());
         
-        return res.status(200).json({ ...product, prices });
+        return res.status(200).json({ id: productDoc.id, ...product, prices });
         
     } catch (error) {
         console.error("Failed to fetch product:", error);
